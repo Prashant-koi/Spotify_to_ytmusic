@@ -37,10 +37,26 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = [
     'localhost', # Keep localhost for direct local access if needed
     '127.0.0.1', # Keep 127.0.0.1 for direct local access
-    '3858-209-6-206-102.ngrok-free.app' # Add your ngrok domain here
+    '3858-209-6-206-102.ngrok-free.app' 
 ]
 
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # react frontend(current one for dev only)
+]
+CORS_ALLOW_CREDENTIALS = True 
+
+# Add this setting to allow all origins during development (ONLY for development)
+CORS_ALLOW_ALL_ORIGINS = True  # <<< ADD THIS LINE
+
+# Existing settings
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Session Cookie Settings for Cross-Site Contexts (like ngrok + localhost frontend)
+SESSION_COOKIE_SAMESITE = 'None' # Allow cookie to be sent in cross-site requests
+SESSION_COOKIE_SECURE = True     # Required if SameSite is 'None'
+SESSION_COOKIE_HTTPONLY = True   # Prevent JavaScript access 
+SESSION_COOKIE_AGE = 86400  
 
 # Application definition
 
