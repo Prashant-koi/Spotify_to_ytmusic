@@ -1,3 +1,5 @@
 spotipy
-python-dotenv
 ytmusicapi
+Django
+djangorestframework
+python-decouple
