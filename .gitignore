@@ -1,0 +1,8 @@
+.env
+.spotifycache
+__pycache__/
+*.pyc
+.venv/
+headers_auth.json
+oauth.json
+.spotifycache
