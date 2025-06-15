@@ -3,3 +3,5 @@ ytmusicapi
 Django
 djangorestframework
 python-decouple
+google-auth-oauthlib
+django-cors-headers
